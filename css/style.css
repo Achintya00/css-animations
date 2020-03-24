@@ -1,0 +1,78 @@
+html,body{
+    margin:0;
+    padding:0;
+    font-family:roboto;
+    overflow: hidden;
+}
+.wrapper{
+    height:40%;
+    background: skyblue;
+}
+.grass, .wrapper, .road{
+    position:relative;
+}
+.grass{
+    width:100%;
+    height: 30%;
+    background: seagreen;
+}
+.road{
+    width:100%;
+    background-color: dimgray !important;
+    padding: 130px 0px;
+    border-bottom:10px solid grey;
+    border-top:10px solid grey;
+}
+.dashed{
+    height:0px;
+    border:5px dashed white;
+    box-sizing: border-box;
+    width:100%;
+    position: absolute;
+}
+.cloud{
+    position: absolute;
+    top:100px;
+    height:100px;
+    width:100px;
+    animation:wind 80s linear infinite reverse; 
+}
+.mario{
+    top:-130px;
+    position: absolute;
+    left:0px;
+    animation:drive 3s infinite linear, jump 0.3s 1.2s ease ;
+}
+.luigi{
+    top:0px;
+    position: absolute;
+    left:0px;
+    animation: drive 3s  infinite linear reverse;
+}
+@keyframes drive{
+    from{
+        transform: translateX(-200px);
+    }    
+    to{
+        transform: translateX(1500px);
+    }
+}
+@keyframes wind{
+    from{
+        left:-300px;
+    }
+    to{
+        left:100%;
+    }
+}
+@keyframes jump{
+    0%{
+        top:-130px;
+    }
+    50%{
+        top:-200px;
+    }
+    100%{
+        top:-130px;
+    }
+}
